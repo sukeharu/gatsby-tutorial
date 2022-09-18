@@ -1,0 +1,20 @@
+---
+title: "Third Post"
+date: "2021-09-17"
+slug: "third-post"
+---
+
+# オブジェクトのプロパティを列挙する方法
+
+オブジェクトのプロパティは `for...in` で簡単に列挙することはできない（iterableでないということ）。オブジェクトのプロパティを列挙するには次のようなスクリプトを書く。
+
+~~~javascript
+for (const key in object) {
+  if (Object.hasOwnProperty.call(object, key)) {
+    const element = object[key];
+    
+  }
+}
+~~~
+
+なぜこうするか？　`hasOwnProperty()` というプロパティ名は保護されていないので上書き可能なため、万全を期すには `for...in` を使ってプロパティを列挙するよりも、`Object` の静的メソッドを使ったほうが確実だから。

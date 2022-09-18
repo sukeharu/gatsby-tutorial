@@ -1,0 +1,24 @@
+---
+title: "Second Post"
+date: "2021-07-12"
+slug: "second-post"
+---
+
+# メモリ管理
+created: 2022-07-03 01:05
+
+- [メモリ管理 - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Memory_Management)
+- [Memory Management - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+
+JavaScriptのメモリ管理は（すべて？）Gabage Collection(GC) によって行われている。JavaScriptに限らず、メモリはこうして管理される。
+
+1. プログラム上必要になったときにメモリ領域を確保する
+2. 確保されたメモリの内容を使って処理をする
+3. もう使わず、必要なくなったら確保したメモリを解放する
+
+GC によるメモリ管理が行われるJavaScriptは、1と3を自動で行う（プログラマがメモリの確保や解放を手動で行わない）。
+
+1のメモリ確保は変数などの宣言時。最初に使うとき。
+
+
+GCにはリファレンス・カウンティング方式とマーク＆スウィープ方式がある。2012年以降すべての主要ブラウザはマーク＆スウィープ方式になっている。
